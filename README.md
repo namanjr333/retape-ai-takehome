@@ -211,6 +211,12 @@ help, so `X=2500` where the lump is `10000`).
 - **No feasible schedule at any funding** (e.g. floors force a sum exceeding what
   any timing can support): the binary search detects infeasibility at its upper
   bound and reports it rather than returning a misleading amount.
+- **`max_segments = 1` with a non-`even` creditor** means exactly one distinct
+  payment level, i.e. all payments equal — so a `k` is usable only when the offer
+  total divides evenly. This is a deliberate strict reading of "distinct payment
+  levels": the `even_pays` flag is the mechanism that permits an "as equal as
+  possible" ±1-cent remainder, so a non-`even` creditor that also caps levels at 1
+  does not get that leniency. (All provided cases avoid this combination.)
 - The candidate sweep is exhaustive but relies on the small rule sizes in scope
   (`k ≤ 12`, `max_segments ≤ 4`). For much larger caps this would want a DP or an
   LP/CP solver; the current enumeration is deliberately simple and easy to audit.
