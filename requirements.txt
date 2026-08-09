@@ -1,0 +1,3 @@
+pytest>=8.0
+# The core task needs only the Python standard library. Add anything you reach
+# for (e.g. ortools, numpy) here.

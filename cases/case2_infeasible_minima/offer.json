@@ -1,0 +1,7 @@
+{
+  "creditor": "TightCo",
+  "creditor_balance_cents": 80000,
+  "original_balance_cents": 80000,
+  "settlement_pct": 0.5,
+  "first_payment_date": "2026-01-31"
+}
